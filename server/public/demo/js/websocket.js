@@ -72,7 +72,7 @@
     }
 
     function isPrivateMsg(msg){
-        return msg && msg.match(/^@([\u4E00-\uFA29]+|[\uE7C7-\uE7F3]+|w+)\s+/);
+        return msg && msg.match(/^@([\u4E00-\uFA29]+|[\uE7C7-\uE7F3]+|\w+)\s+/);
     }
 
     function onConnect(){
