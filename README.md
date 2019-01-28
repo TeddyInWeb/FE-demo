@@ -9,6 +9,10 @@
   1. websocket聊天室(群)
   2. RESTFUL api服务
   3. 图片/文件上传(支持同时多文件)
+  
+  使用方法: 
+  1. 下载代码, 代码目录执行npm install安装依赖
+  2. 在代码目录执行node index.js启动服务
+  3. 打开浏览器, 访问 http://localhost:8088/demo/index 即可访问demo
+  4. 遇到任何BUG或问题, 欢迎指正, 万分感谢~~
 
-
-(2). webpack4项目搭建demo(开发中...)
