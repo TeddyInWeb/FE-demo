@@ -7,6 +7,7 @@ const mime = require('mime')
 const fileStream = require('../lib/fileStream.js')
 const fileUpload = require('../controller/fileUpload.js')
 const demoApi = require('../controller/demoApi.js')
+const ejModel = require('../controller/ejModel.js')
 
 module.exports = {
 
@@ -37,6 +38,14 @@ module.exports = {
 
     apiDemo : (request, response) => {
         demoApi.entry(request, response)
+    },
+
+    excelTojson : (request, response) => {
+        ejModel.excelTojson(request, response)
+    },
+
+    jsonToExcel : (request, response) => {
+        ejModel.jsonToExcel(request, response)
     },
 
 }

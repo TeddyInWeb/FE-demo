@@ -22,9 +22,11 @@ body{
     padding-bottom: 20px;
 }
 
+
 .model{
-    margin-top: 40px;
+    margin-top: 20px;
     width: 50%;
+    min-width: 600px;
 }
 
 .tips{
@@ -114,7 +116,7 @@ body{
 }
 
 .ws-input{
-    width: 502px;
+    width: 428px;
 }
 
 .ws-chat-username{
@@ -135,4 +137,8 @@ body{
 
 .ws-message-private{
     color: #836FFF;
+}
+
+.ej-tip{
+    color: orange;
 }

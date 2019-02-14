@@ -84,15 +84,25 @@
             </div>
         </section>
 
+        <!-- EXCEL与JSON互转 -->
+        <section class="model ej-switch">
+            <h4>4. EXCEL与JSON互转</h4>
+            <input class="ej-input" type="file" onchange="ej.handleFileSelect(this);">
+            <button onclick="ej.goSwitch();">转换并下载</button>
+            <p class="ej-tip" id="ej-tip"></p>
+        </section>
+
     </section>
 
     <!-- 第三方lib代码 -->
     <script type="text/javascript" src="lib/socket.io.js"></script>
+    <script type="text/javascript" src="lib/download.js"></script>
 
     <!-- 模块代码 -->
     <script type="text/javascript" src="js/upload.js"></script>
     <script type="text/javascript" src="js/api.js"></script>
     <script type="text/javascript" src="js/websocket.js"></script>
+    <script type="text/javascript" src="js/ej.js"></script>
 
 </body>
 

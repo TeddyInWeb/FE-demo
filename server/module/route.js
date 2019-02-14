@@ -13,6 +13,8 @@ const apiHandlerMap = {
     '/demo/index': 'demo',
     '/demo/upload': 'upload',
     '/demo/data': 'apiDemo',
+    '/demo/excelTojson': 'excelTojson',
+    '/demo/jsonToExcel': 'jsonToExcel',
 }
 
 const getHandler = (key) => {
