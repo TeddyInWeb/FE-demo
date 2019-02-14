@@ -6,7 +6,7 @@
   <b> --> server </b><br>
 
   包含: 
-  
+  <div>
   ⑴ 
   demo: /demo/index
       1. websocket聊天室(群)
@@ -20,7 +20,7 @@
       2. 在代码目录执行node index.js启动服务
       3. 打开浏览器, 访问 http://localhost:8088/demo/index 即可访问demo
       4. 遇到任何BUG或问题, 欢迎指正, 万分感谢~~
-    
+  </div>
     
   ⑵ 
   个人主页: /homepage/index
