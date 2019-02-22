@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tool-list-container {
+    display: flex;
+    width: 100%;
+    margin: 30px;
+    margin-top: 80px;
+    flex-wrap: wrap;
+}
+
+.tool-list-container .list-item {
+    width: 260px;
+    height: 200px;
+    padding: 10px;
+    padding-top: 40px;
+    cursor: pointer;
+    border: 1px #FFF solid;
+}
+
+.tool-list-container .list-item:hover {
+    border: 1px #CCC solid;
+}
+
+.tool-list-container .list-item img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.tool-list-container .list-item div {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tool-pop-containner {
+    display: none;
+    padding: 20px;
+}
+
+.tool-hosts-pop {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.hosts-edit-screen {
+    display: block;
+    width: 100%;
+    height: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tool-pop-tab {
+    display: flex;
+}
+
+.tool-pop-tab div {
+    margin-right: 30px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.icon-back {
+    background: url('../assets/return.png') no-repeat;
+    background-size: cover;
+}
+
+.icon-save {
+    background: url('../assets/save.png') no-repeat;
+    background-size: cover;
+}
+
+.icon-reflash {
+    background: url('../assets/reflash.png') no-repeat;
+    background-size: cover;
+}
+
+.box-title{
+    margin-top: 20px;
+}
+
+.system-box, .network-box{
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.system-info-title{
+    display: inline-block;
+    width: 120px;
+}

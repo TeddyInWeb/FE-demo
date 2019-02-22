@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>开发工具箱</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="tool-list-container" id="tool-list-container">
+        <div class="list-item" onclick="hosts.readHosts()">
+            <img src="./src/assets/hosts.png">
+            <div>编辑HOSTS</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/json.png">
+            <div>JSON解析</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/url.png">
+            <div>URL编码/解码</div>
+        </div>
+        <div class="list-item" onclick="system.getSystemInfo()">
+            <img src="./src/assets/system.png">
+            <div>获取系统信息</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/color.png">
+            <div>颜色代码查询</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/img.png">
+            <div>图片转base64</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/excel.png">
+            <div>Excel/json转换</div>
+        </div>
+        <div class="list-item" onclick="alert('功能开发中...')">
+            <img src="./src/assets/qrcode.png">
+            <div>生成二维码</div>
+        </div>
+    </section>
+    <section class="tool-pop-containner" id="tool-pop-containner">
+
+        <!-- hosts -->
+        <section class="pop tool-hosts-pop" id="tool-hosts-pop">
+            <div class="tool-pop-tab">
+                <div class="icon icon-back" title="返回" onclick="util.closePop()"></div>
+                <div class="icon icon-save" title="保存" onclick="hosts.saveFile()"></div>
+                <div class="icon icon-reflash" title="刷新" onclick="hosts.readHosts()"></div>
+            </div>
+            <textarea class="hosts-edit-screen" id="hosts-edit-screen"></textarea>
+        </section>
+
+        <!-- system -->
+        <section class="pop tool-system-pop" id="tool-system-pop">
+            <div class="tool-pop-tab">
+                <div class="icon icon-back" title="返回" onclick="util.closePop()"></div>
+            </div>
+            <p class="box-title">系统信息</p>
+            <div class="system-box">
+                <p><span class="system-info-title">PC名称:</span><span id="pc-name"></span></p>
+                <p><span class="system-info-title">操作系统:</span><span id="sys-name"></span></p>
+                <p><span class="system-info-title">cpu信息:</span><span id="cpus"></span></p>
+                <p><span class="system-info-title">内存:</span><span id="ram"></span></p>
+            </div>
+            <p class="box-title">网络信息</p>
+            <div class="network-box">
+                <p><span class="system-info-title">协议:</span><span id="ip-family"></span></p>
+                <p><span class="system-info-title">ip地址:</span><span id="ip-address"></span></p>
+                <p><span class="system-info-title">mac地址:</span><span id="mac-address"></span></p>
+            </div>
+        </section>
+
+    </section>
+    <script src="src/js/index.js" charset="utf-8"></script>
+</body>
+
+</html>
