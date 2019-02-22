@@ -1,4 +1,4 @@
-# Demo
+# Demos
 
 <b>⑴. node.js服务端&客户端demo</b>
 
@@ -25,3 +25,17 @@
   ⑵ 
   个人主页: /homepage/index
 
+<b>⑵. devtools开发工具箱(electon项目)</b>
+
+  目录:
+  <b> --> devtools </b><br>
+
+  包含: 
+  1. hosts编辑
+  2. json解析
+  3. url编码/解码
+  4. 系统信息
+  5. 颜色代码查询
+  6. 图片/base64
+  7. excel/json转换
+  8. 二维码生成器
