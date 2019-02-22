@@ -1,4 +1,4 @@
-# Demo
+# Demos
 
 <b>⑴. node.js服务端&客户端demo</b>
 
@@ -7,8 +7,8 @@
 
   包含: 
 
-  ⑴ 
-  demo: /demo/index<br>
+  学习demo: 
+  路径: /demo/index<br>
     1. websocket聊天室(群)<br>
     2. RESTFUL api服务<br>
     3. 图片/文件上传(支持同时多文件)<br>
@@ -22,6 +22,21 @@
     4. 遇到任何BUG或问题, 欢迎指正, 万分感谢~~<br>
   <br>
     
-  ⑵ 
-  个人主页: /homepage/index
+  
+  个人简介主页: 
+  路径: /homepage/index<br><br>
+  
+<b>⑵. devtools开发工具箱(electon项目)</b>
+  
+  目录:
+  <b> --> devtools </b><br>
 
+  包含: 
+  1. hosts编辑
+  2. json解析
+  3. url编码/解码
+  4. 系统信息
+  5. 颜色代码查询
+  6. 图片/base64
+  7. excel/json转换
+  8. 二维码生成器
