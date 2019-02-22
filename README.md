@@ -7,8 +7,8 @@
 
   包含: 
 
-  ⑴ 
-  demo: /demo/index<br>
+  学习demo: 
+  路径: /demo/index<br>
     1. websocket聊天室(群)<br>
     2. RESTFUL api服务<br>
     3. 图片/文件上传(支持同时多文件)<br>
@@ -22,11 +22,12 @@
     4. 遇到任何BUG或问题, 欢迎指正, 万分感谢~~<br>
   <br>
     
-  ⑵ 
-  个人主页: /homepage/index
-
+  
+  个人简介主页: 
+  路径: /homepage/index
+  <br>
 <b>⑵. devtools开发工具箱(electon项目)</b>
-
+  
   目录:
   <b> --> devtools </b><br>
 
