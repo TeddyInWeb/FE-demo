@@ -3,6 +3,12 @@
     "version": "1.0.0",
     "main": "main.js",
     "dependencies": {
+        "qr-image": "^3.2.0"
+    },
+    "scripts": {
+        "build": "electron-packager ./ devtools --windows --out ./ --app--version 1.0.0 --electron--version 4.0.5 --overwrite --icon=./src/assets/tool.ico"
+    },
+    "devDependencies": {
         "electron": "^4.0.5"
     }
 }

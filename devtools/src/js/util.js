@@ -10,7 +10,7 @@ function getElementByClassName(classnames){
 				objArray[index]=tags[i];
 				index++;
 			} 
-		} 
+		}
 	} 
     return objArray;
 }
@@ -19,6 +19,7 @@ function getElementByClassName(classnames){
 function openPop(target){
     document.getElementById('tool-list-container').style.display = 'none';
     document.getElementById('tool-pop-containner').style.display = 'block';
+    hideAllByClassName('pop');
     document.getElementById(target).style.display = 'block';
 }
 
@@ -26,15 +27,42 @@ function openPop(target){
 function closePop(){
     document.getElementById('tool-list-container').style.display = 'flex';
     document.getElementById('tool-pop-containner').style.display = 'none';
-    for(let element of document.getElementsByClassName('pop')){
+}
+
+// 选中目标
+function selected(element, className){
+    let elements = element.parentNode.childNodes;
+    for(var i in elements){
+        removeClass(elements[i], className)
+    }
+    addClass(element, className);
+}
+
+function hideAllByClassName(className){
+    for(let element of document.getElementsByClassName(className)){
         if(element){
             element.style.display = 'none';
         }
     }
 }
 
+function addClass(element, className){
+    if(!element.className.match(new RegExp("(\\s|^)" + className + "(\\s|$)"))){
+        element.className += ` ${className}`;
+    }
+}
+
+function removeClass(element, className){
+    let reg = new RegExp("(\\s|^)" + className + "(\\s|$)");
+    if(element.className && element.className.match(reg)){
+        element.className = element.className.replace(reg, '');
+    }
+}
+
 module.exports = {
     getElementByClassName: getElementByClassName,
     openPop: openPop,
-    closePop: closePop
+    closePop: closePop,
+    selected: selected,
+    hideAllByClassName: hideAllByClassName
 }

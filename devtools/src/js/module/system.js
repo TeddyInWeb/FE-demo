@@ -1,4 +1,8 @@
 
+/**
+ * 系统信息模块
+ */
+
 const Os = require('os');
 const Util = require('../util.js');
 
