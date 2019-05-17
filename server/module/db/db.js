@@ -22,7 +22,8 @@ const connectMongoDb = (database = 'demo', success, error) => {
     })
 
     db.on('error', () => {
-        console.log(`db ${database} connect failed`)
+        console.log(`db ${database} connect failed, make sure your device had correctly installed MongoDB , 
+        learn more 'https://blog.csdn.net/qq_27378621/article/details/80933354'`)
         typeof error === 'function' && error()
     })
 
@@ -37,9 +38,9 @@ const closeMongoDb = () => {
 }
 
 const getSchema = (schema) => {
-    if(schema && schemaList[schema]){
+    if (schema && schemaList[schema]) {
         return mongoose.model(schema, schemaList[schema])
-    }else{
+    } else {
         return false
     }
 }

@@ -1,4 +1,3 @@
-
 /**
  *  文件上传服务
  */
@@ -14,11 +13,10 @@ const renameing = (file) => {
     let clientPath = `./upload/${tmpName}_${new Date().getTime()}.${tmpFix}` // 给前端访问路径
 
     return new Promise((resolve, reject) => {
-        fileStream.renameFile(file.path, serverPath, (err) => {
-            if(err){
-                reject()
-            }
+        fileStream.renameFile(file.path, serverPath, () => {
             resolve(clientPath) // 更名成功后, 将最新路径返回给上级
+        }, (err) => {
+            reject(err)
         })
     })
 }
@@ -39,38 +37,41 @@ const sendError = (response, code) => {
 }
 
 module.exports = {
-    upload: (request, response) => { 
-
+    upload: (request, response) => {
         let form = new formidable.IncomingForm()
-        form.uploadDir = '/wamp/www/xiaoyue/platform/server/public/demo/upload'   // 文件保存目录
-        form.maxFileSize = 2 * 1024 * 1024  // 上传文件大小限制为最大2M  
-        form.keepExtensions = true        // 使用文件的原扩展名
+        form.uploadDir = 'upload' // 文件保存目录
+        form.maxFileSize = 2 * 1024 * 1024 // 上传文件大小限制为最大2M  
+        form.keepExtensions = true // 使用文件的原扩展名
         form.multiples = true // 设置为多文件上传
-        
-        form.parse(request, function(err, fields, files) {
 
-            if(err){
-                return void sendError(response, '-5000') // 上传的包超过大小或未知错误
-            }
+        try {
+            form.parse(request, function (err, fields, files) {
 
-            if(!files || !files.files){
-                return void sendError(response, '-5001') // 上传的包为空
-            }
+                if (err) {
+                    return void sendError(response, '-5000') // 上传的包超过大小或未知错误
+                }
 
-            let filesQuene = Array.isArray(files.files) ? files.files : [files.files]
+                if (!files || !files.files) {
+                    return void sendError(response, '-5001') // 上传的包为空
+                }
 
-            let promiseList = [] // 异步操作列表, 给后面promise.all使用
+                let filesQuene = Array.isArray(files.files) ? files.files : [files.files]
 
-            filesQuene.map((file) => {
-                promiseList.push(renameing(file))
+                let promiseList = [] // 异步操作列表, 给后面promise.all使用
+
+                filesQuene.map((file) => {
+                    promiseList.push(renameing(file))
+                })
+
+                Promise.all(promiseList).then((data) => {
+                    sendResult('success', response, data)
+                }).catch((data) => {
+                    sendResult('error', response, data)
+                })
+
             })
-
-            Promise.all(promiseList).then((data) => {
-                sendResult('success', response, data)
-            }).catch((data)=>{
-                sendResult('error', response, data)
-            })
-
-        })
+        } catch (err) {
+            sendResult('error', response, err)
+        }
     }
 }
